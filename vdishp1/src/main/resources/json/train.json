@@ -1,0 +1,67 @@
+[
+  {
+    "id": 7005,
+    "departure_date": "03-02-2019",
+    "departure_time": "19:00",
+    "destination": "Минск",
+    "departure_station": "Центральный возал",
+    "departure_platform": 1,
+    "arrival_station": "Центральный вокзал",
+    "ticket_price": 10,
+    "ticket_type": "Верхние, нижнии",
+    "arrival_date": "04-02-2019",
+    "arrival_time": "06:00"
+  },
+  {
+    "id": 7006,
+    "departure_date": "03-02-2019",
+    "departure_time": "16:00",
+    "destination": "Орша",
+    "departure_station": "Центральный возал",
+    "departure_platform": 2,
+    "arrival_station": "Восточный вокзал",
+    "ticket_price": 30,
+    "ticket_type": "Верхние, нижнии",
+    "arrival_date": "04-02-2019",
+    "arrival_time": "06:00"
+  },
+  {
+    "id": 7007,
+    "departure_date": "03-02-2019",
+    "departure_time": "19:00",
+    "destination": "Орша",
+    "departure_station": "Центральный возал",
+    "departure_platform": 6,
+    "arrival_station": "Центральный вокзал",
+    "ticket_price": 20,
+    "ticket_type": "Верхние, нижнии",
+    "arrival_date": "04-02-2019",
+    "arrival_time": "06:00"
+  },
+  {
+    "id": 7008,
+    "departure_date": "04-02-2019",
+    "departure_time": "19:00",
+    "destination": "Минск",
+    "departure_station": "Центральный возал",
+    "departure_platform": 6,
+    "arrival_station": "Центральный вокзал",
+    "ticket_price": 10,
+    "ticket_type": "Верхние, нижнии",
+    "arrival_date": "05-02-2019",
+    "arrival_time": "19:00"
+  },
+  {
+    "id": 7009,
+    "departure_date": "02-02-2019",
+    "departure_time": "19:00",
+    "destination": "Минск",
+    "departure_station": "Центральный возал",
+    "departure_platform": 6,
+    "arrival_station": "Центральный вокзал",
+    "ticket_price": 30,
+    "ticket_type": "Верхние, нижнии",
+    "arrival_date": "02-02-2019",
+    "arrival_time": "23:30"
+  }
+]
