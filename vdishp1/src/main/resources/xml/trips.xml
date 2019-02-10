@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<trips>
+    <bus>
+        <id>7005</id>
+        <departure_date>03-02-2019</departure_date>
+        <departure_time>19:00</departure_time>
+        <destination>Минск</destination>
+        <departure_station>Центральный возал</departure_station>
+        <departure_platform>1</departure_platform>
+        <arrival_station>Центральный вокзал</arrival_station>
+        <ticket_price>10</ticket_price>
+        <travel_time>2h:30min</travel_time>
+        <bus_model>BMW</bus_model>
+    </bus>
+    <bus>
+        <id>7006</id>
+        <departure_date>03-02-2019</departure_date>
+        <departure_time>16:00</departure_time>
+        <destination>Орша</destination>
+        <departure_station>Центральный возал</departure_station>
+        <departure_platform>2</departure_platform>
+        <arrival_station>Восточный вокзал</arrival_station>
+        <ticket_price>30</ticket_price>
+        <travel_time>1h:30min</travel_time>
+        <bus_model>BMW</bus_model>
+    </bus>
+    <bus>
+        <id>7007</id>
+        <departure_date>03-02-2019</departure_date>
+        <departure_time>19:00</departure_time>
+        <destination>Орша</destination>
+        <departure_station>Центральный возал</departure_station>
+        <departure_platform>6</departure_platform>
+        <arrival_station>Центральный вокзал</arrival_station>
+        <ticket_price>20</ticket_price>
+        <travel_time>1h:45min</travel_time>
+        <bus_model>BMW</bus_model>
+    </bus>
+    <bus>
+        <id>7008</id>
+        <departure_date>04-02-2019</departure_date>
+        <departure_time>19:00</departure_time>
+        <destination>Минск</destination>
+        <departure_station>Центральный возал</departure_station>
+        <departure_platform>6</departure_platform>
+        <arrival_station>Центральный вокзал</arrival_station>
+        <ticket_price>10</ticket_price>
+        <travel_time>2h:45min</travel_time>
+        <bus_model>BMW</bus_model>
+    </bus>
+    <bus>
+        <id>7009</id>
+        <departure_date>02-02-2019</departure_date>
+        <departure_time>19:00</departure_time>
+        <destination>Минск</destination>
+        <departure_station>Центральный возал</departure_station>
+        <departure_platform>6</departure_platform>
+        <arrival_station>Центральный вокзал</arrival_station>
+        <ticket_price>30</ticket_price>
+        <travel_time>1h:45min</travel_time>
+        <bus_model>BMW</bus_model>
+    </bus>
+    <train>
+        <id>7010</id>
+        <departure_date>02-02-2019</departure_date>
+        <departure_time>19:00</departure_time>
+        <destination>Минск</destination>
+        <departure_station>Центральный возал</departure_station>
+        <departure_platform>6</departure_platform>
+        <arrival_station>Центральный вокзал</arrival_station>
+        <ticket_price>30</ticket_price>
+        <ticket_type>Верхние, нижнии</ticket_type>
+        <arrival_date>04-02-2019</arrival_date>
+        <arrival_time>06:00</arrival_time>
+    </train>
+    <train>
+        <id>7011</id>
+        <departure_date>02-02-2019</departure_date>
+        <departure_time>19:00</departure_time>
+        <destination>Минск</destination>
+        <departure_station>Центральный возал</departure_station>
+        <departure_platform>6</departure_platform>
+        <arrival_station>Центральный вокзал</arrival_station>
+        <ticket_price>30</ticket_price>
+        <ticket_type>Верхние, нижнии</ticket_type>
+        <arrival_date>06-02-2019</arrival_date>
+        <arrival_time>09:00</arrival_time>
+    </train>
+</trips>
