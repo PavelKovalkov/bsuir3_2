@@ -5,11 +5,13 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lab1.serializer.CustomLocalDateSerializer;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
 @Getter
 @Setter
+@ToString
 public class RailwayTrip {
     @JsonProperty("id")
     private int id;

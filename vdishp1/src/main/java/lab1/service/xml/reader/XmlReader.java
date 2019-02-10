@@ -32,7 +32,7 @@ public final class XmlReader {
         this.filePath=filePath;
     }
 
-    public static RailwayTrip[] obtainRailwayTripsFromXmlFile(String transportType) throws Exception {
+    public RailwayTrip[] obtainRailwayTripsFromXmlFile(String transportType) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         URL resourceUrl = BusTripFactory.class.getResource(instance.filePath);
@@ -48,7 +48,7 @@ public final class XmlReader {
         return railwayTrips;
     }
 
-    private static RailwayTrip getTrip(Node item, String type) {
+    private RailwayTrip getTrip(Node item, String type) {
         RailwayTrip trip = null;
         if (item.getNodeType() == Node.ELEMENT_NODE) {
             Element element = (Element) item;
@@ -77,7 +77,7 @@ public final class XmlReader {
         return trip;
     }
 
-    private static String getTagValue(String tag, Element element) {
+    private String getTagValue(String tag, Element element) {
         NodeList nodeList = element.getElementsByTagName(tag).item(0).getChildNodes();
         Node node = nodeList.item(0);
         return node.getNodeValue();

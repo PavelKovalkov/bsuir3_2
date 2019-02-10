@@ -8,6 +8,7 @@ import lab1.service.RailwayTripFactory;
 import lab1.service.impl.BusTripFactory;
 import lab1.service.impl.RailwayIterator;
 import lab1.service.impl.TrainTripFactory;
+import lab1.service.xml.reader.XmlReader;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,14 +20,17 @@ import java.time.LocalDate;
 @RestController
 public class RailwayTripController {
     private final ObjectMapper mapper;
+    private final XmlReader xmlReader;
 
     @Autowired
-    public RailwayTripController(ObjectMapper mapper) {
+    public RailwayTripController(ObjectMapper mapper,
+                                 XmlReader reader) {
         this.mapper = mapper;
+        xmlReader = reader;
     }
 
     @GetMapping(path = "/get/{trip_type}")
-    public ResponseEntity<RailwayTrip[]> getAllRailwayTrip(@PathVariable("trip_type") String tripType) throws Exception {
+    public ResponseEntity<RailwayTrip[]> getAllRailwayTrips(@PathVariable("trip_type") String tripType) throws Exception {
         RailwayTripFactory factory;
         switch (tripType) {
             case "bus":
@@ -43,10 +47,10 @@ public class RailwayTripController {
     }
 
     @GetMapping(path = "/get/filter/{trip_type}")
-    public ResponseEntity<RailwayTrip[]> getFilteredRailwayTrip(
-        @RequestHeader("Filter-entry") String filterEntry,
-        @PathVariable("trip_type") String tripType,
-        @RequestBody String filteredDataJson
+    public ResponseEntity<RailwayTrip[]> getFilteredRailwayTrips(
+            @RequestHeader("Filter-entry") String filterEntry,
+            @PathVariable("trip_type") String tripType,
+            @RequestBody String filteredDataJson
     ) throws Exception {
         RailwayTripFactory factory;
 
@@ -71,18 +75,33 @@ public class RailwayTripController {
                 break;
             case DEPARTURE_DATE:
                 LocalDate filtered = LocalDate.of(
-                    jsonObject.getInt("year"),
-                    jsonObject.getInt("month"),
-                    jsonObject.getInt("day")
+                        jsonObject.getInt("year"),
+                        jsonObject.getInt("month"),
+                        jsonObject.getInt("day")
                 );
                 iterator.filterByDepartureDate(
-                    DepartureDateFilterParam.valueOf(jsonObject.getString("filtered_type").toUpperCase()),
-                    filtered);
+                        DepartureDateFilterParam.valueOf(jsonObject.getString("filtered_type").toUpperCase()),
+                        filtered);
                 break;
             default:
                 throw new RuntimeException();
         }
 
+        return new ResponseEntity<>(iterator.getRailwayTrips(), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/get/xml/filter/{trip_type}")
+    public ResponseEntity<RailwayTrip[]> getFilteredRailwayTripsFromXml(
+            @PathVariable("trip_type") String tripType,
+            @RequestParam(value = "platform") int platform
+    ) throws Exception {
+        RailwayTrip[] railwayTrips = xmlReader.obtainRailwayTripsFromXmlFile(tripType);
+        RailwayIterator iterator = new RailwayIterator(railwayTrips);
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        iterator.filterByPlatform(platform);
         return new ResponseEntity<>(iterator.getRailwayTrips(), HttpStatus.OK);
     }
 }

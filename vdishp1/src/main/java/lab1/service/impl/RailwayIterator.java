@@ -94,4 +94,23 @@ public class RailwayIterator {
         index = 0;
         return this;
     }
+
+    public RailwayIterator filterByPlatform(int filterValue) {
+        int newSize = 0;
+        for (RailwayTrip trip : railwayTrips) {
+            if (trip.getDeparturePlatform() == filterValue) {
+                newSize++;
+            }
+        }
+        RailwayTrip[] trips = new RailwayTrip[newSize];
+        int i = 0;
+        for (RailwayTrip trip : railwayTrips) {
+            if (trip.getDeparturePlatform() == filterValue) {
+                trips[i++] = trip;
+            }
+        }
+        railwayTrips = trips;
+        index = 0;
+        return this;
+    }
 }
