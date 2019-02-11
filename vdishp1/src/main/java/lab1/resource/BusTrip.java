@@ -11,4 +11,9 @@ public class BusTrip extends RailwayTrip {
     private String travelTime;
     @JsonProperty("bus_model")
     private String busModel;
+
+    @Override
+    public void getInformation() {
+        System.out.printf("Special bus trip information including travel time %s and bus mode %s\n", travelTime, busModel);
+    }
 }

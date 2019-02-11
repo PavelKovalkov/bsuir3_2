@@ -22,7 +22,13 @@ public class TrainTrip extends RailwayTrip {
     public void setArrivalDate(String arrivalDate) {
         String[] yearMonthDay = arrivalDate.split("-");
         this.arrivalDate = LocalDate.of(Integer.valueOf(yearMonthDay[2]),
-            Integer.valueOf(yearMonthDay[1]),
-            Integer.valueOf(yearMonthDay[0]));
+                Integer.valueOf(yearMonthDay[1]),
+                Integer.valueOf(yearMonthDay[0]));
+    }
+
+    @Override
+    public void getInformation() {
+        System.out.printf("Special train trip information including ticket type %s , arrival date %s, arrival time %s\n",
+                ticketType, arrivalDate, arrivalTime);
     }
 }

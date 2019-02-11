@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
-public class RailwayTrip {
+public abstract class RailwayTrip{
     @JsonProperty("id")
     private int id;
     @JsonSerialize(using = CustomLocalDateSerializer.class)
@@ -37,4 +37,6 @@ public class RailwayTrip {
             Integer.valueOf(yearMonthDay[1]),
             Integer.valueOf(yearMonthDay[0]));
     }
+
+    public abstract void getInformation();
 }

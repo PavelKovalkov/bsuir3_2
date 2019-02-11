@@ -98,7 +98,7 @@ public class RailwayTripController {
         RailwayTrip[] railwayTrips = xmlReader.obtainRailwayTripsFromXmlFile(tripType);
         RailwayIterator iterator = new RailwayIterator(railwayTrips);
         while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+            iterator.next().getInformation();
         }
 
         iterator.filterByPlatform(platform);
