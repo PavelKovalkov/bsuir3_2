@@ -4,14 +4,14 @@
     "tasks": [
       {
         "id": 1,
-        "name": "task1 1 project 1",
+        "name": "task1 1",
         "responsible": "Employee 1",
         "estimate": "2d:2h:30m",
         "state": "in progress"
       },
       {
         "id": 2,
-        "name": "task 2 project 1",
+        "name": "task 2",
         "responsible": "Employee 2",
         "estimate": "2d:2h:30m",
         "state": "completed"
@@ -23,14 +23,14 @@
     "tasks": [
       {
         "id": 3,
-        "name": "task 1 project 2",
+        "name": "task 1",
         "responsible": "Employee 2",
         "estimate": "2d:2h:30m",
         "state": "in progress"
       },
       {
         "id": 4,
-        "name": "task 2 project 2",
+        "name": "task 2",
         "responsible": "Employee 1",
         "estimate": "2d:2h:30m",
         "state": "in progress"

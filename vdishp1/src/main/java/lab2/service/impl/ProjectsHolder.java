@@ -2,9 +2,11 @@ package lab2.service.impl;
 
 import lab2.resource.Project;
 import lombok.Getter;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+@Component
 public class ProjectsHolder {
     @Getter
     private Project[] projects;

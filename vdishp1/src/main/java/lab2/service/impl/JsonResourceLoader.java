@@ -1,7 +1,6 @@
 package lab2.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lab1.service.impl.BusTripFactory;
 import lab2.resource.Project;
 import lab2.service.ResourceLoader;
 
@@ -19,7 +18,7 @@ public class JsonResourceLoader implements ResourceLoader {
 
     @Override
     public Project[] readProjectsFromFile() throws IOException {
-        URL resourceUrl = BusTripFactory.class.getResource(resourcePath);
+        URL resourceUrl = JsonResourceLoader.class.getResource(resourcePath);
         return mapper.readValue(resourceUrl, Project[].class);
     }
 }
